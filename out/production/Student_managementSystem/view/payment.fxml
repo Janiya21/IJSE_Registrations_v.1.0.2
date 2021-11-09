@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="788.0" prefWidth="1244.0" stylesheets="@../styles/pay.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.paymentController">
+    <children>
+        <ImageView fitHeight="819.0" fitWidth="1128.0" layoutX="114.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../assets/reg.jpg" />
+            </image>
+            <effect>
+                <GaussianBlur radius="17.12">
+                    <input>
+                        <DropShadow blurType="TWO_PASS_BOX" radius="4.75" width="0.0" />
+                    </input>
+                </GaussianBlur>
+            </effect>
+        </ImageView>
+        <Pane prefHeight="782.0" prefWidth="113.0" style="-fx-background-color: #f2f2f2#f2f2f2;">
+            <children>
+                <JFXButton fx:id="btnRegistration" ellipsisString="" layoutX="16.0" layoutY="59.0" onAction="#GoToReg" prefHeight="72.0" prefWidth="54.0" text=" " textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="56.0" fitWidth="64.0" opacity="0.65" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../assets/images1.png" />
+                            </image>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </ImageView>
+                    </graphic>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </JFXButton>
+                <JFXButton fx:id="Settings" disable="true" ellipsisString="" layoutX="14.0" layoutY="162.0" onAction="#BtnSettings" prefHeight="72.0" prefWidth="54.0" ripplerFill="#171717" text=" ">
+                    <graphic>
+                        <ImageView fitHeight="58.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../assets/pay1.png" />
+                            </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                        </ImageView>
+                    </graphic>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </JFXButton>
+                <JFXButton fx:id="GoBack" ellipsisString="" layoutX="17.0" layoutY="379.0" onAction="#BtnBack" prefHeight="72.0" prefWidth="54.0" ripplerFill="#f2efef" text=" ">
+                    <graphic>
+                        <ImageView fx:id="backBtn" fitHeight="51.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../assets/backbuttonX.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </JFXButton>
+                <JFXButton fx:id="database" ellipsisString="" layoutX="20.0" layoutY="264.0" onAction="#BtnDatabase" prefHeight="72.0" prefWidth="54.0" ripplerFill="#f8f4f4" text=" ">
+                    <graphic>
+                        <ImageView fitHeight="62.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../assets/log1.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </JFXButton>
+            </children>
+        </Pane>
+        <Label layoutX="510.0" layoutY="57.0" prefHeight="43.0" prefWidth="361.0" text="Payment Registry">
+            <font>
+                <Font name="Algerian" size="30.0" />
+            </font>
+            <textFill>
+                <RadialGradient centerX="0.625" centerY="0.34466019417475724" radius="0.5609756097560976">
+                    <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="#fc0000" offset="1.0" />
+                    </stops>
+                </RadialGradient>
+            </textFill>
+        </Label>
+      <JFXButton fx:id="method1" layoutX="184.0" layoutY="152.0" onAction="#BtnMethod01" opacity="0.81" prefHeight="526.0" prefWidth="224.0" ripplerFill="#c3b3b3" style="-fx-background-color: #e6e6e6; -fx-background-radius: 22;" styleClass="btn" text="               Method 1  &#10;&#10;  &#10;  EACH YEAR HAS 3 TERMS&#10;&#10;&#10;  Down Payment : &#10;                      120 000 /=&#10;&#10;  Each Term in 1st Year :&#10;                      25 000 /=&#10;   &#10;  For The 2nd Year : &#10;                      30 000 /=&#10;&#10;  Total Cost :&#10;                     285 000 /=&#10;&#10;  Saved Cost:&#10;                     15 000 /=">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <Lighting diffuseConstant="1.59" specularConstant="0.89" specularExponent="26.34" surfaceScale="1.74">
+               <bumpInput>
+                  <Shadow height="0.0" radius="0.0" width="0.0" />
+               </bumpInput>
+            </Lighting>
+         </effect>
+         <textFill>
+            <RadialGradient centerX="0.6420454545454545" centerY="0.38349514563106796" cycleMethod="REFLECT" focusAngle="-28.95" focusDistance="-0.7073170731707317" radius="0.573170731707317">
+               <stops>
+                  <Stop color="#f5d019" />
+                  <Stop color="#251515" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </textFill></JFXButton>
+      <JFXButton fx:id="method2" layoutX="538.0" layoutY="152.0" onAction="#BtnMethod02" opacity="0.81" prefHeight="526.0" prefWidth="224.0" ripplerFill="#c3b3b3" style="-fx-background-color: #e6e6e6; -fx-background-radius: 22;" styleClass="btn" text="               Method 2&#10;&#10;&#10;   EACH YEAR HAS 3 TERMS&#10;&#10;&#10;  Down Payment : &#10;                      120 000 /=&#10;&#10;  Each Term in 1st Year :&#10;                      25 000 /=&#10;   &#10;  For The 2nd Year : &#10;                      30 000 /=&#10;&#10;  Total Cost :&#10;                     285 000 /=&#10;&#10;  Saved Cost:&#10;                     15 000 /=">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <Lighting diffuseConstant="1.59" specularConstant="0.89" specularExponent="26.34" surfaceScale="1.74">
+               <bumpInput>
+                  <Shadow height="0.0" radius="0.0" width="0.0" />
+               </bumpInput>
+            </Lighting>
+         </effect>
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="#e10f0f" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </textFill>
+      </JFXButton>
+      <JFXButton fx:id="method3" layoutX="880.0" layoutY="152.0" onAction="#btnMethod03" opacity="0.81" prefHeight="526.0" prefWidth="224.0" ripplerFill="#c3b3b3" style="-fx-background-color: #e6e6e6; -fx-background-radius: 22;" styleClass="btn" text="               Method 3&#10;&#10;&#10;  EACH YEAR HAS 3 TERMS&#10;&#10;&#10;  Down Payment : &#10;                      120 000 /=&#10;&#10;  Each Term in 1st Year :&#10;                      25 000 /=&#10;   &#10;  For The 2nd Year : &#10;                      30 000 /=&#10;&#10;  Total Cost :&#10;                     285 000 /=&#10;&#10;  Saved Cost:&#10;                     15 000 /=">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <Lighting diffuseConstant="1.59" specularConstant="0.89" specularExponent="26.34" surfaceScale="1.74">
+               <bumpInput>
+                  <Shadow height="0.0" radius="0.0" width="0.0" />
+               </bumpInput>
+            </Lighting>
+         </effect>
+         <textFill>
+            <RadialGradient centerX="0.6420454545454545" centerY="0.38349514563106796" cycleMethod="REFLECT" focusAngle="-28.95" focusDistance="-0.7073170731707317" radius="0.573170731707317">
+               <stops>
+                  <Stop color="#1e1e1d" />
+                  <Stop color="#d02bba" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </textFill>
+      </JFXButton>
+    </children>
+</AnchorPane>

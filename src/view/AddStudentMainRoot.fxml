@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="783.0" prefWidth="1199.0" stylesheets="@../styles/registration.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.registrationController">
+   <children>
+      <JFXButton ellipsisString="" layoutX="24.0" layoutY="69.0" prefHeight="72.0" prefWidth="54.0" styleClass="btn3" text=" ">
+         <graphic>
+            <ImageView disable="true" fitHeight="56.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/images1.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton ellipsisString="" layoutX="25.0" layoutY="212.0" prefHeight="72.0" prefWidth="54.0" ripplerFill="#f2efef" styleClass="btn3" text=" ">
+         <graphic>
+            <ImageView fitHeight="46.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/pay1.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="databaseBtn" ellipsisString="" layoutX="28.0" layoutY="346.0" onAction="#BtnDatabase" prefHeight="72.0" prefWidth="54.0" ripplerFill="#f8f4f4" styleClass="btn3" text=" ">
+         <graphic>
+            <ImageView fitHeight="62.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/log1.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="GoBack" ellipsisString="" layoutX="27.0" layoutY="494.0" onAction="#BtnBack" prefHeight="72.0" prefWidth="54.0" ripplerFill="#f2efef" styleClass="btn3" text=" ">
+         <graphic>
+            <ImageView fitHeight="51.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/backbuttonX.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <AnchorPane layoutX="120.0" layoutY="5.0" prefHeight="200.0" prefWidth="200.0" />
+   </children>
+</AnchorPane>

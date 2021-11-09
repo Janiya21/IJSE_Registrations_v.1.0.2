@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="918.0" prefWidth="1320.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.studentDB_Controller">
+
+    <children>
+      <ImageView fitHeight="971.0" fitWidth="1320.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/db.jpg" />
+         </image>
+         <effect>
+            <GaussianBlur radius="13.94" />
+         </effect>
+      </ImageView>
+        <Separator layoutY="82.0" prefHeight="15.0" prefWidth="1320.0" />
+        <Separator layoutX="346.0" layoutY="87.0" orientation="VERTICAL" prefHeight="831.0" prefWidth="4.0" />
+        <TableView fx:id="studentView" layoutX="374.0" layoutY="166.0" prefHeight="723.0" prefWidth="920.0">
+            <columns>
+                <TableColumn fx:id="ColumnStudentId" prefWidth="110.0" text="ID" />
+                <TableColumn fx:id="ColumnStudentName" prefWidth="242.0" text="Name" />
+                <TableColumn fx:id="ColumnStudentMail" prefWidth="227.0" text="Email" />
+            <TableColumn fx:id="ColumnPayMethod" prefWidth="176.00006103515625" text="Pay Method" />
+                <TableColumn fx:id="ColumnTelNo" prefWidth="168.0001220703125" text="Tel No" />
+            </columns>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+        </TableView>
+        <Pane layoutY="14.0" opacity="0.78" prefHeight="63.0" prefWidth="1320.0" style="-fx-background-color: #d9d9d9;">
+            <children>
+                <Label layoutX="414.0" layoutY="15.0" prefHeight="32.0" prefWidth="521.0" text="Level IV Student Database ">
+                    <font>
+                        <Font name="Bell MT Bold" size="27.0" />
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+        <Separator layoutX="8.0" layoutY="628.0" prefHeight="3.0" prefWidth="338.0" />
+        <TextArea fx:id="resultConsole" layoutX="34.0" layoutY="685.0" prefHeight="82.0" prefWidth="286.0" promptText="You cant add data from here.. Go to registration!! " />
+      <JFXTextField fx:id="studentId" layoutX="44.0" layoutY="140.0" prefHeight="31.0" prefWidth="266.0" promptText="Enter Student's Id" />
+      <JFXTextField fx:id="studentEmail" layoutX="44.0" layoutY="289.0" prefHeight="31.0" prefWidth="266.0" promptText="Enter email" />
+      <JFXButton fx:id="searchStudentBtn" ellipsisString="" layoutX="1124.0" layoutY="104.0" onAction="#searchStudent" opacity="0.93" prefHeight="43.0" prefWidth="57.0" style="-fx-background-color: transparent;" text=" ">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/search2.png" />
+               </image>
+            </ImageView>
+         </graphic></JFXButton>
+      <JFXButton fx:id="dltStudBtn" layoutX="197.0" layoutY="566.0" onAction="#dltStudent" prefHeight="46.0" prefWidth="104.0" style="-fx-background-color: #d9d9d9;" text="Delete">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
+      <JFXButton fx:id="updateStuBtn" layoutX="53.0" layoutY="566.0" onAction="#updateStudent" prefHeight="46.0" prefWidth="104.0" style="-fx-background-color: #d9d9d9;" text="Update">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
+      <JFXButton fx:id="refreshBtn" ellipsisString="" layoutX="1181.0" layoutY="104.0" onAction="#refreshStudent" prefHeight="37.0" prefWidth="21.0" style="-fx-background-color: transparent;" text=" ">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/refresh.png" />
+               </image>
+            </ImageView>
+         </graphic></JFXButton>
+      <JFXTextField fx:id="telNo" layoutX="44.0" layoutY="442.0" prefHeight="31.0" prefWidth="266.0" promptText="Tel No" />
+      <JFXButton fx:id="btnBack" layoutX="53.0" layoutY="820.0" onAction="#backFromDb" prefHeight="46.0" prefWidth="104.0" style="-fx-background-color: #d9d9d9;" text="Back">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
+      <JFXButton fx:id="btnQuit" layoutX="197.0" layoutY="820.0" onAction="#quitFromDb" prefHeight="46.0" prefWidth="104.0" style="-fx-background-color: #d9d9d9;" text="Quit">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
+      <JFXTextField fx:id="studentsName" layoutX="44.0" layoutY="211.0" prefHeight="31.0" prefWidth="266.0" promptText="Student's name" />
+      <JFXTextField fx:id="paymentMethod" layoutX="44.0" layoutY="367.0" prefHeight="31.0" prefWidth="266.0" promptText="Payment method" />
+      <JFXTextField fx:id="searchStuId" layoutX="374.0" layoutY="110.0" prefHeight="31.0" prefWidth="730.0" promptText="enter the student's Id for details" />
+      <JFXButton layoutX="55.0" layoutY="503.0" onAction="#btnAdd" prefHeight="46.0" prefWidth="248.0" style="-fx-background-color: #d9d9d9;" text="Clear">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+    </children>
+</AnchorPane>

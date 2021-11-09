@@ -1,0 +1,23 @@
+.root{
+    -fx-background-color:#ffffff;
+}
+
+.dark{
+    -fx-background-color:#312d2d;
+}
+
+Button{
+    -fx-background-color:transparent;
+    -fx-border-color:#312d2d;
+    -fx-border-width:2;
+    -fx-border-radius:25px;
+
+}
+
+.btn{
+    -fx-background-color:#312d2d;
+    -fx-border-width:2;
+    -fx-border-radius:25px;
+    -fx-background-radius:25px;
+    -fx-text-fill:#ffffff;
+}

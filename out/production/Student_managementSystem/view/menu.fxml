@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="784.0" prefWidth="1130.0" stylesheets="@../styles/menu.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Menu_Controller">
+   <children>
+      <ImageView fitHeight="784.0" fitWidth="1222.0" opacity="0.99" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/menu.jpg" />
+         </image>
+         <effect>
+            <GaussianBlur radius="11.58" />
+         </effect>
+      </ImageView>
+      <Pane fx:id="vBoxX" maxWidth="1420.0" minWidth="223.0" opacity="0.83" prefHeight="784.0" prefWidth="223.0" style="-fx-background-color: #002633;">
+         <children>
+            <JFXButton ellipsisString=" " layoutX="57.0" layoutY="200.0" onAction="#settings" prefHeight="100.0" prefWidth="110.0" text=" ">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <FontAwesomeIconView fill="#b5b5b5" glyphName="COG" size="55" />
+               </graphic>
+            </JFXButton>
+            <JFXButton ellipsisString=" " layoutX="23.0" layoutY="531.0" onAction="#aboutIJSE" prefHeight="120.0" prefWidth="164.0" text=" ">
+               <graphic>
+                  <ImageView fitHeight="66.0" fitWidth="141.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/logo2x.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <Label layoutX="42.0" layoutY="711.0" prefHeight="21.0" prefWidth="139.0" text="All right reserved " />
+            <JFXButton ellipsisString="" layoutX="57.0" layoutY="370.0" onAction="#goBack" prefHeight="100.0" prefWidth="110.0" text=" ">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <FontAwesomeIconView fill="#b9b9b9" glyphName="REPLY" size="55" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="left" layoutX="35.0" layoutY="77.0" onAction="#goLeft" prefHeight="46.0" prefWidth="38.0" text=" ">
+               <graphic>
+                  <FontAwesomeIconView fill="#c6c6c6" glyphName="CARET_LEFT" size="50" />
+               </graphic>
+            </JFXButton>
+            <JFXButton layoutX="145.0" layoutY="77.0" onAction="#goRight" prefHeight="46.0" prefWidth="38.0" text=" ">
+               <graphic>
+                  <FontAwesomeIconView fill="#c6c6c6" glyphName="CARET_RIGHT" size="50" wrappingWidth="23.071428298950195" />
+               </graphic>
+            </JFXButton>
+         </children>
+         <effect>
+            <Lighting diffuseConstant="1.95" specularConstant="0.0" specularExponent="20.98" surfaceScale="2.96">
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+            </Lighting>
+         </effect>
+      </Pane>
+      <Button fx:id="addStudent" layoutX="253.0" layoutY="108.0" mnemonicParsing="false" onAction="#addNewStudent" opacity="0.85" prefHeight="194.0" prefWidth="335.0" styleClass="btn2" text="     Add Students">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView glyphName="PLUS" size="25" />
+         </graphic>
+      </Button>
+      <Button fx:id="timetable" layoutX="693.0" layoutY="108.0" mnemonicParsing="false" onAction="#loadTimetable" opacity="0.81" prefHeight="194.0" prefWidth="335.0" styleClass="btn2" text="      TimeTables">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView glyphName="TH_LIST" size="25" />
+         </graphic>
+      </Button>
+      <Button layoutX="253.0" layoutY="434.0" mnemonicParsing="false" opacity="0.81" prefHeight="194.0" prefWidth="335.0" styleClass="btn2" text="     Marks">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView glyphName="PENCIL" size="25" />
+         </graphic>
+      </Button>
+      <Button layoutX="693.0" layoutY="434.0" mnemonicParsing="false" opacity="0.78" prefHeight="194.0" prefWidth="335.0" styleClass="btn2" text="   Procedure">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView glyphName="BAR_CHART_ALT" size="25" />
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>

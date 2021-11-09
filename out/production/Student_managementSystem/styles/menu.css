@@ -1,0 +1,17 @@
+.btn{
+    -fx-border-radius:20%;
+    -fx-background-radius:20%;
+    -fx-background-color:#737373;
+}
+
+.btn:hover {
+    -fx-scale-x: 1.06;
+    -fx-scale-y: 1.06;
+    -fx-scale-z: 1.06;
+}
+
+.btn2:hover {
+    -fx-scale-x: 1.06;
+    -fx-scale-y: 1.06;
+    -fx-scale-z: 1.06;
+}

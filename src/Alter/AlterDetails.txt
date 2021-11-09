@@ -1,0 +1,130 @@
+public class DBUtil {
+
+    // When you are using J.D.B.C outside of an application server, the DriverManager class manages the establishment of connections.
+    private static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
+
+    //An application uses the connection object to create statements. Statement, PreparedStatement, and CallableStatement objects are used for executing SQL statements.
+    private static Connection connection = null;
+
+    //url for the database which want to access through the application
+    private static final String connStr = "jdbc:mysql://localhost:3306/student_management";
+
+    public static void dbConnect() throws SQLException, ClassNotFoundException{
+        try{
+            //to register the driver is to use Java's Class.forName() method, to dynamically load the driver's class file into memory, which automatically registers it.
+            Class.forName(JDBC_DRIVER);
+        }catch(ClassNotFoundException e){
+            System.out.println("Error !!");
+            e.printStackTrace();
+        }
+        System.out.println("JDBC Driver has been registered!!");
+
+        try{
+            // DriverManager.getConnection() - DriverManager helps you to find and connect a suitable registered driver and return a Connection object . You can use this connection object
+            // to interact with the underlying database. (Attempts to establish a connection to the given database URL)
+            connection =  DriverManager.getConnection(connStr,"root","Janith20010121");
+        }catch (SQLException e){
+            System.out.println("Connection Failed!!");
+            output("Connecting database unsuccessful !","Please check the connection again !!.. maybe your server is off");
+            throw e;
+        }
+    }
+
+    public static void dbDisconnect() throws SQLException {
+        try {
+            // If there are connection , you have to close that connection after you done it.
+            if(connection != null && !connection.isClosed()){
+                connection.close();
+            }
+        } catch (Exception e) {
+            throw e;
+        }
+    }
+
+    //insert/delete/update data in database
+    public static void dbExecuteQuery(String sqlStmt) throws SQLException,ClassNotFoundException{
+
+        // you need to create statement (query) query to interact with the data in the database
+        // There are three types of statements in JDBC namely, Statement, Prepared Statement, Callable statement.
+        //  The JDBC Statement, CallableStatement, and PreparedStatement interfaces define the methods and properties that enable you to send
+        //  SQL or PL/SQL commands and receive data from your database.
+        Statement stmt = null;
+
+        try{
+            dbConnect();
+            // Creates a Statement object for sending SQL statements to the database.
+            stmt = connection.createStatement();
+
+            // Returns the number of rows affected by the execution of the SQL statement. Use this method to execute SQL statements, for which you
+            // expect to get a number of rows affected - for example, an INSERT, UPDATE, or DELETE statement.
+            //  It returns an integer value representing the number of rows affected.
+            stmt.executeUpdate(sqlStmt);
+
+        }catch(SQLException e){
+            System.out.println("Problem occurs at dbExecuteQuery " + e);
+            throw e;
+        }
+        finally {
+            // If there are connection , you have to close that connection after you done it
+            if(stmt != null){
+                stmt.close();
+            }
+            // Then you need to close the connection which using method you created in earlier
+            dbDisconnect();
+        }
+    }
+
+    // Retrieving the records from the database
+    public static ResultSet dbExecute(String sqlQuery) throws SQLException,ClassNotFoundException {
+        // Initializing Statement variable and assign it null
+        Statement stmt = null;
+
+        // ------------- https://www.tutorialspoint.com/jdbc/jdbc-result-sets.htm ---------------
+
+        // A ResultSet object maintains a cursor that points to the current row in the result set. The term "result set" refers to the
+        // row and column data contained in a ResultSet object.
+        ResultSet rs = null;
+
+        // The CachedRowSet is the base implementation of disconnected row sets. It connects to the data source, reads data from it, disconnects with the
+        // data source and the processes the retrieved data, reconnects to the data source and writes the modifications
+        CachedRowSetImpl crs = null;
+
+        try{
+            dbConnect();
+            stmt = connection.createStatement();
+
+            // Returns a boolean value of true if a ResultSet object can be retrieved; otherwise, it returns false
+            // ResultSet executeQuery(String sql)- Executes the given SQL statement, which returns a single ResultSet object.
+
+            // https://facingissuesonit.com/2019/05/08/jdbc-difference-between-executequery-vs-executeupdate-vs-execute-method/
+            rs = stmt.executeQuery(sqlQuery);
+            crs = new CachedRowSetImpl();
+
+            // https://www.codejava.net/java-se/jdbc/how-to-use-cachedrowset-in-jdbc
+            crs.populate(rs);
+
+        }catch(SQLException e){
+            System.out.println("Problem occurs in dbExecution " + e);
+            throw e;
+        }
+        finally{
+            if(rs != null){
+                rs.close();
+            }
+            if(stmt != null){
+                stmt.close();
+            }
+            dbDisconnect();
+        }
+        return crs;
+    }
+
+    private static void output(String title,String message){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+
+}

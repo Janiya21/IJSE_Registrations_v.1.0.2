@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="753.0" prefWidth="1235.0" styleClass="root" stylesheets="@../styles/Login3.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Login3_Controller">
+   <children>
+      <FontAwesomeIconView glyphName="USER" layoutX="842.0" layoutY="105.0" size="35" />
+      <Label layoutX="889.0" layoutY="75.0" text="ADMIN LOG - IN">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <FontAwesomeIconView glyphName="CHECK_SQUARE_ALT" layoutX="218.0" layoutY="105.0" size="35" />
+      <Label layoutX="265.0" layoutY="75.0" text="SIGN - UP">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="passWordField" layoutX="230.0" layoutY="258.0" prefHeight="31.0" prefWidth="316.0" promptText="✽ enter a password between 10 digits" />
+      <Label layoutX="86.0" layoutY="457.0" prefHeight="21.0" prefWidth="63.0" text="Branch" />
+      <Label layoutX="86.0" layoutY="263.0" text="Password" />
+      <Label layoutX="84.0" layoutY="167.0" text="Username" />
+      <Label layoutX="89.0" layoutY="355.0" text="Confirm Password" />
+      <JFXTextField fx:id="userSignInTxt" layoutX="230.0" layoutY="162.0" onKeyReleased="#checkUserAvailability" prefHeight="31.0" prefWidth="316.0" promptText="☻ username" />
+      <JFXComboBox fx:id="branchSignInCombo" layoutX="230.0" layoutY="452.0" prefHeight="31.0" prefWidth="316.0" promptText="  branch" />
+      <JFXPasswordField fx:id="rePassWordField" layoutX="230.0" layoutY="350.0" prefHeight="31.0" prefWidth="316.0" promptText="✽ re-enter the password" />
+      <Button layoutX="163.0" layoutY="628.0" mnemonicParsing="false" onAction="#left" prefHeight="45.0" prefWidth="284.0" text="Log - In">
+         <padding>
+            <Insets bottom="10.0" left="25.0" right="25.0" top="10.0" />
+         </padding>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="signBtn" layoutX="163.0" layoutY="544.0" mnemonicParsing="false" onAction="#signIn" prefHeight="45.0" prefWidth="284.0" styleClass="btn" text="Sign - In">
+         <padding>
+            <Insets bottom="10.0" left="25.0" right="25.0" top="10.0" />
+         </padding>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="817.0" layoutY="596.0" mnemonicParsing="false" onAction="#right" prefHeight="45.0" prefWidth="284.0" text="Sign - Up">
+         <padding>
+            <Insets bottom="10.0" left="25.0" right="25.0" top="10.0" />
+         </padding>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label layoutX="718.0" layoutY="305.0" text="Password" />
+      <JFXTextField fx:id="usernameField" layoutX="843.0" layoutY="193.0" prefHeight="31.0" prefWidth="303.0" promptText="☻ username" />
+      <JFXComboBox fx:id="branchLogInCombo" layoutX="843.0" layoutY="402.0" prefHeight="31.0" prefWidth="303.0" promptText="  branch" />
+      <JFXPasswordField fx:id="passwordField" layoutX="843.0" layoutY="300.0" prefHeight="31.0" prefWidth="303.0" promptText="✽ password" />
+      <Button fx:id="LoginBtn" layoutX="817.0" layoutY="512.0" mnemonicParsing="false" onAction="#ButtonLoginAction" prefHeight="45.0" prefWidth="284.0" styleClass="btn" text="Log - In">
+         <padding>
+            <Insets bottom="10.0" left="25.0" right="25.0" top="10.0" />
+         </padding>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label layoutX="718.0" layoutY="407.0" text="Branch" />
+      <Label layoutX="716.0" layoutY="198.0" text="Username" />
+      <VBox fx:id="vb_content" layoutX="-2.0" prefHeight="753.0" prefWidth="609.0" styleClass="dark" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-2.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="615.0" fitWidth="632.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/work2.jpg" />
+               </image>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </ImageView>
+            <ImageView fitHeight="128.0" fitWidth="564.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/logo2x.png" />
+               </image>
+               <VBox.margin>
+                  <Insets left="190.0" />
+               </VBox.margin>
+            </ImageView>
+         </children></VBox>
+   </children>
+</AnchorPane>
